@@ -1,4 +1,4 @@
-/*
+
 2.a PRINT ODD NUMBERS IN AN ARRAY
 
 const odd = (arr) => {
