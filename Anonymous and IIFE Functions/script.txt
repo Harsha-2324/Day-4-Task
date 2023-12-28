@@ -1,0 +1,363 @@
+
+1.a PRINT ODD NUMBERS IN AN ARRAY
+
+Anonymous:
+
+const odd = function(arr){
+    for(let i = 0 ; i < arr.length ; i++){
+        if(arr[i] % 2 != 0){
+            console.log(arr[i]);
+        }
+    }
+}
+arr = [1,2,3,4,5,6,7,8,9,10];
+odd(arr);
+
+o/p:
+1
+3
+5
+7
+9
+
+IIFE:
+
+let odd = (function(arr){
+    for(let i = 0 ; i < arr.length ; i++){
+        if(arr[i] % 2 != 0){
+            console.log(arr[i]);
+        }
+    }
+}) ([1,2,3,4,5,6,7,8,9,10]);
+
+o/p:
+1
+3
+5
+7
+9
+
+
+1.b CONVERT ALL THE STRINGS TO TITLE CAPS IN A STRING ARRAY
+
+Anonymous:
+
+let caps = function (str) {
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+    } 
+    return str.join(' ');
+  }
+
+var str = "my name is harshavardhan rajinikanth";
+console.log(caps(str));
+
+o/p: My Name Is Harshavardhan Rajinikanth
+
+IIFE:
+
+
+let caps = (function (str) {
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+    } 
+    return str.join(' ');
+  })("my name is harshavardhan rajinikanth");
+
+console.log(caps);
+
+o/p: My Name Is Harshavardhan Rajinikanth
+
+1.c SUM OF ALL NUMBERS IN AN ARRAY
+
+Anonymous:
+
+let sumArr = function (arr) {
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+    sum = sum+arr[i]; 
+    } 
+    return sum;
+}
+var arr = [1,2,3,4,5,6,7,8,9,10];
+console.log(sumArr(arr));
+
+o/p: 55
+
+IIFE:
+
+let sumArr = (function (arr) {
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+    sum = sum+arr[i]; 
+    } 
+    return sum;
+})([1,2,3,4,5,6,7,8,9,10]);
+console.log(sumArr);
+
+o/p: 55
+
+1.d RETURN ALL THE PRIME NUMBERS IN AN ARRAY
+
+Anonymous:
+
+function isPrime(n) {
+    for (let i = 2; i < n; i++) {
+      if (n % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  //Anonymous Function
+  const primeNumbers = function (arr) {
+    const primeNumbers = [];
+    for (const num of arr) {
+      if (isPrime(num)) {
+        primeNumbers.push(num);
+      }
+    }
+    return primeNumbers;
+  }
+  
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  console.log(primeNumbers(arr));
+  
+  o/p: [ 1, 2, 3, 5, 7 ]
+  
+  IIFE:
+  
+function isPrime(n) {
+    for (let i = 2; i < n; i++) {
+      if (n % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  const primeNumbers = (function (arr) {
+    const primeNumbers = [];
+    for (const num of arr) {
+      if (isPrime(num)) {
+        primeNumbers.push(num);
+      }
+    }
+    return primeNumbers;
+  })([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  console.log(primeNumbers);
+  
+  o/p: [ 1, 2, 3, 5, 7 ]
+  
+  1.e RETURN ALL THE PALINDROMES IN AN ARRAY
+  
+  Anonymous:
+  
+  function Palindrome(str) {
+    
+    const filteredStr = str.toLowerCase().replace(/\s/g, '');
+  
+   
+    return filteredStr === filteredStr.split('').reverse().join('');
+  }
+  
+  //Anonymous Function
+  const palindromesResult = function (arr) {
+    
+    const palindromes = [];
+  
+    
+    for (const str of arr) {
+      if (Palindrome(str)) {
+        palindromes.push(str);
+      }
+    }
+  
+
+    return palindromes;
+  }
+  
+ 
+  const arr = ['engine','bike','racecar', 'madam', 'civic', 'level', 'hello'];
+  
+  console.log(palindromesResult(arr));
+  
+  o/p: [ 'racecar', 'madam', 'civic', 'level' ]
+  
+IIFE:
+
+function Palindrome(str) {
+    
+    const filteredStr = str.toLowerCase().replace(/\s/g, '');
+  
+   
+    return filteredStr === filteredStr.split('').reverse().join('');
+  }
+  
+  const palindromesResult = (function (arr) {
+    
+    const palindromes = [];
+  
+    
+    for (const str of arr) {
+      if (Palindrome(str)) {
+        palindromes.push(str);
+      }
+    }
+  
+
+    return palindromes;
+  })(['engine','bike','racecar', 'madam', 'civic', 'level', 'hello']);
+  
+  console.log(palindromesResult);
+  o/p: [ 'racecar', 'madam' , 'civic', 'level' ]
+  
+  1.f RETURN MEDIAN OF TWO SORTED ARRAYS OF THE SAME SIZE
+  
+  Anonymous:
+  
+  const median = function (arr1, arr2) {
+    
+    const mergedArray = arr1.concat(arr2).sort((a, b) => a - b);
+  
+    
+    const middleIndex = mergedArray.length / 2;
+  
+    
+    if (mergedArray.length % 2 === 0) {
+      return (mergedArray[middleIndex - 1] + mergedArray[middleIndex]) / 2;
+    }
+  
+    
+    return mergedArray[middleIndex];
+  }
+
+  const arr1 = [1, 3, 5, 7, 9];
+const arr2 = [2, 4, 6, 8, 10];
+
+console.log(median(arr1, arr2));
+
+o/p: 5.5
+
+IIFE:
+
+const median = (function (arr1, arr2) {
+    
+    const mergedArray = arr1.concat(arr2).sort((a, b) => a - b);
+  
+    
+    const middleIndex = mergedArray.length / 2;
+  
+    
+    if (mergedArray.length % 2 === 0) {
+      return (mergedArray[middleIndex - 1] + mergedArray[middleIndex]) / 2;
+    }
+  
+    
+    return mergedArray[middleIndex];
+  })([1, 3, 5, 7, 9],[2, 4, 6, 8, 10]);
+
+console.log(median);
+
+o/p: 5.5
+
+
+1.g  REMOVE DUPLICATES FROM AN ARRAY
+
+Anonymous:
+
+let DuplicateRemoval = function (arr) {
+        let unique = [];
+        for(i=0; i < arr.length; i++){ 
+            if(unique.indexOf(arr[i]) === -1) { 
+                unique.push(arr[i]); 
+            } 
+        }
+        return unique;
+    }
+    let arr = [1,2,3,4,1,5,2,6,3];
+    console.log(DuplicateRemoval(arr));
+	
+o/p: [ 1, 2, 3, 4, 5, 6 ]
+
+IIFE:
+
+let DuplicateRemoval = (function (arr) {
+        let unique = [];
+        for(i=0; i < arr.length; i++){
+            if(unique.indexOf(arr[i]) === -1) { 
+                unique.push(arr[i]); 
+            } 
+        }
+        return unique;
+    })([1,2,3,4,1,5,2,6,3]);
+    console.log(DuplicateRemoval);
+
+1.h ROTATE AN ARRAY BY K TIMES
+
+Anonymous:
+
+const rotatedArray = function rotateArray(arr, k) {
+    
+    if (k < 0 || k >= arr.length) {
+      return arr;
+    }
+  
+    
+    reverse(arr, 0, arr.length - 1);
+  
+    
+    reverse(arr, 0, k - 1);
+  
+    
+    reverse(arr, k, arr.length - 1);
+  
+    return arr;
+  }
+  
+  function reverse(arr, start, end) {
+    while (start < end) {
+      [arr[start], arr[end]] = [arr[end], arr[start]];
+      start++;
+      end--;
+    }
+  }
+
+  const arr = [1, 2, 3, 4, 5];
+const k = 2;
+console.log(rotatedArray(arr, k));
+
+o/p: [ 4, 5, 1, 2, 3 ]
+
+IIFE:
+
+function reverse(arr, start, end) {
+    while (start < end) {
+      [arr[start], arr[end]] = [arr[end], arr[start]];
+      start++;
+      end--;
+    }
+  }
+  
+const rotatedArray = (function rotateArray(arr, k) {
+    
+    if (k < 0 || k >= arr.length) {
+      return arr;
+    }
+  
+    
+    reverse(arr, 0, arr.length - 1);
+  
+    a
+    reverse(arr, 0, k - 1);
+  
+    
+    reverse(arr, k, arr.length - 1);
+  
+    return arr;
+  })([1, 2, 3, 4, 5],2);
+console.log(rotatedArray);
+
+o/p: [ 4, 5, 1, 2, 3 ]
