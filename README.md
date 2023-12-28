@@ -2,7 +2,7 @@
 
 **This Repository is created for Day 4 Task**
 
-+ *1. Do the below programs in anonymous function & IIFE*
++ `1. Do the below programs in anonymous function & IIFE`
   
     + *a.Print odd numbers in an array*
     + *b.Convert all the strings to title caps in a string array*
@@ -16,7 +16,7 @@
 
   + *Source file is in Folder:* **Anonymous and IIFE Functions**   
 
-+ *2. Do the below programs in arrow functions.*
++ `2. Do the below programs in arrow functions.`
     + *a.Print odd numbers in an array*
     + *b.Convert all the strings to title caps in a string array*
     + *c.Sum of all numbers in an array
